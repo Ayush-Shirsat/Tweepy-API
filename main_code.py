@@ -21,6 +21,6 @@ if __name__== "__main__":
 
 	stream = Stream(auth, listener)
 
-	stream.filter(track=['iphone'])
+	stream.filter(track=[''])
 end
 
