@@ -1,4 +1,4 @@
-ACCESS_TOKEN = "570679862-QAk64qXSkvRLqXWMp0Bv6Ap5Vg4knQCLSc3Uls52"
-ACCESS_TOKEN_SECRET = "Z6C6xp2cwDPFcrZhnCCgFxGcqj5F2E4K3mE3J6NvPf3hG"
-CONSUMER_KEY = "iNmmPt4o1ewKCgBOFymmjb2gl"
-CONSUMER_SECRET = "D8WFeQjI52XsRjRP1VqW09G7upnjug4pMjxuwFdeo4VkBbrZR2"
+ACCESS_TOKEN = "Enter Access token"
+ACCESS_TOKEN_SECRET = "Enter Access token secret"
+CONSUMER_KEY = "Enter Consumer key"
+CONSUMER_SECRET = "Enter Consumer secret"
