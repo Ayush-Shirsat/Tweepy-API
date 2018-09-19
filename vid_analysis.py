@@ -4,7 +4,7 @@ from google.cloud import videointelligence
 import io
 import os
 
-os.system("export GOOGLE_APPLICATION_CREDENTIALS = 'google_application_credentials.json'")
+os.system("export GOOGLE_APPLICATION_CREDENTIALS='google_application_credentials.json'")
 
 video_client = videointelligence.VideoIntelligenceServiceClient()
 features = [videointelligence.enums.Feature.LABEL_DETECTION]
