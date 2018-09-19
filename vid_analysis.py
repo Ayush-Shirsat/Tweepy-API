@@ -4,7 +4,6 @@ from google.cloud import videointelligence
 import io
 import os
 
-#path = "/home/ece-student/EC_601/Mini_Proj_1/output.mp4"
 os.system("export GOOGLE_APPLICATION_CREDENTIALS = 'google_credentials.json'")
 
 video_client = videointelligence.VideoIntelligenceServiceClient()
@@ -16,14 +15,13 @@ try:
     operation = video_client.annotate_video(features=features, input_content=input_content)
     print('\nProcessing video:')
     result = operation.result(timeout=90)
-except Exception as e:
+except Exception as err:
     print ("Video Intelligence error")
-    print(e)
+    print(err)
     exit()	
 
 print('\nFinished processing.')
 
-# Process video/segment level label annotations
 segment_labels = result.annotation_results[0].segment_label_annotations
 for i, segment_label in enumerate(segment_labels):
     print('Video label description: {}'.format(segment_label.entity.description))
