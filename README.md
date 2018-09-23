@@ -1,4 +1,4 @@
-# Mini_Proj_1
+# Mini_Proj_1: Learning APIs
 Downloads images from a twitter feed and converts them to a video using FFMPEG. The contents of this video are analyzed using Google Cloud Video Intelligence API.
 
 # Built using
@@ -42,3 +42,15 @@ Video is saved as '.mp4' file.
 Run the program "vid_analysis.py"
 This program uses Google Cloud Video Intelligence API to categorize the contents of the video.
 It outputs the category and its confidence.
+
+# Bugs/ Errors
+Sometimes file "vid_analysis.py" throws an error about google application credentials. To fix that run the following command on terminal:
+
+```
+export GOOGLE_APPLICATION_CREDENTIALS='google_application_credentials.json'
+```
+Make sure file 'google_application_credentials.json' has correct path.
+
+# Conclusion
+
+Tweepy was used to stream tweets and save them to a file in .json format. Media URLs were extracted from tweets that had media images in them. FFMPEG was used to convert these images to video with frame rate of 1 fps. This video was analyzed using Google Cloud Video Intelligence API. Content of video was categorized and confidence was printed. Errors and exceptions were also taken into account. 
