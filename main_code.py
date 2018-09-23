@@ -13,17 +13,17 @@ class StdOutListener(StreamListener):
 
 	def on_data(self, data):
 		self.counter += 1
-		if self.counter > 200:
+		if self.counter > 200: # limit the stream to 200 tweets
 			sys.exit() 
 		else:
-			print(data)
-			with open('fetched_tweets.json','a+') as tf:
+			print(data) #Display tweets as they stream
+			with open('fetched_tweets.json','a+') as tf: #Save tweets in json format
 				tf.write(data)
 
 		return True
 
 	def on_error(self, status):
-		print(status)
+		print(status) # Print error (if any)
 
 if __name__== "__main__":
 
@@ -32,6 +32,6 @@ if __name__== "__main__":
 	auth.set_access_token(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET)
 
 	stream = Stream(auth, listener)
-
-	stream.filter(track=['football'])
+  
+	stream.filter(track=['football']) # Set category of tweets by filtering track
 end
