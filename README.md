@@ -16,15 +16,24 @@ Downloads images from a twitter feed and converts them to a video using FFMPEG. 
 
 **Step-1:**
 
-Run the program "Main_code.py"
+Run the program "main_code.py"
 
-Make sure that a file containing twitter credentials is imported as shown in line: 8. File "twitter_credentials.py" has the necessary credentials required to run.
-This program uses streaming class of tweepy. A track name is set on line:38 and the program starts loading tweets based on the track. Tweet limit is set to 200 tweets which can be altered by changing the value on line: 18.
+```
+python main_code.py
+```
+
+Make sure that a file containing twitter credentials is imported as shown in line: 8. File "twitter_credentials.py" has the necessary credentials required to run. This program uses streaming class of tweepy.
+
+User input is taken to stream the maximum number of tweets as shown in line: 44. Setting a limit is generally good as it gives data as per user specifications. The user also inputs a keyword, based on which the Tweets are streamed as shown in line: 47. 
+
 All tweets are in json format and get saved in a file named "fetched_tweets.json". I have decided to stream tweets as it gives me a wider range of options than user handle. 
 
 **Step-2:**
 
 Run the program "get_images.py"
+```
+python get_images.py
+```
 
 This program reads the contents of file "fetched_tweets.json" created in Step-1. 
 It looks for the keyword 'Media_url'.
@@ -35,6 +44,9 @@ All images are saved as 'imgxxxx.jpg'.
 **Step-3:**
 
 Run the program "to_video.py"
+```
+python to_video.py
+```
 
 This program uses FFMPEG to convert images to video.
 Frame rate is set to 1 fps.
@@ -43,6 +55,9 @@ Video is saved as '.mp4' file.
 **Step-4:**
 
 Run the program "vid_analysis.py"
+```
+python vid_analysis.py
+```
 
 This program uses Google Cloud Video Intelligence API to categorize the contents of the video.
 It outputs the category and its confidence.
